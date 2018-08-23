@@ -1,12 +1,12 @@
 Metadata-Version: 1.1
 Name: mprows
-Version: 0.1.2
+Version: 0.1.2.1
 Summary: multiprocessing on row data using user defined functions
 Home-page: https://github.com/pipidog/mprows
 Author: pipidog
 Author-email: pipidog@gmail.com
 License: MIT
-Download-URL: https://github.com/pipidog/mprows/archive/v.0.1.2.tar.gz
+Download-URL: https://github.com/pipidog/mprows/archive/v.0.1.2.1.tar.gz
 Description: # Multi-Processing on Row Data
         This package is simply a python decorator to help your perform multiprocessing based on row data. This is especially useful if your are trying to clean large size data.
         
@@ -41,18 +41,18 @@ Description: # Multi-Processing on Row Data
         ## Example
         You must first import mprows:  
         
-        **from mprows import mprows**   
+        **from mprows.mprows import mprows**   
         
-        Then you can simply program your own function and use mprows as a decorator for multiprocessing. 
+        Then you can simply program your own function and use mprows as a decorator for multiprocessing.  
         
         To multiprocess a function:
         <p align="center">
-        <img src="./img/func.png">
+        <img src="./img/ex_func.png">
         </p>  
         
         To multiprocess a method in a class:
         <p align="center">
-        <img src="./img/class.png">
+        <img src="./img/ex_class.png">
         </p>
 Keywords: multiprocessing,pathos,data cleaning
 Platform: UNKNOWN

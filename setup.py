@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-version='0.1.2'
+version='0.1.2.1'
 with open('/Users/shutingpi/Dropbox/mprows/README.md') as file:
     long_description = file.read()
 

@@ -4,7 +4,7 @@ this code shows how to use mprows to multiprocessing your function
 import numpy as np
 from mprows.mprows import mprows
 
-task = 'func'  # 'class' / 'func'
+task = 'class'  # 'class' / 'func'
 par = {'op':'add', 'const': 5}
 n_proc = 5
 
