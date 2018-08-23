@@ -1,12 +1,12 @@
 '''
 this code shows how to use mprows to multiprocessing your function
 '''
+import numpy as np
+from mprows.mprows import mprows
 
-from mprows import mprows
-
-task = 'class'  # 'class' / 'func'
+task = 'func'  # 'class' / 'func'
 par = {'op':'add', 'const': 5}
-n_proc = 1
+n_proc = 5
 
 # ==================================
 data = np.ones((1000,3))

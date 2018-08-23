@@ -32,7 +32,7 @@ when you build your own function, it must built based in this form:
 ## Example
 You must first import mprows:  
 
-**from mprows import mprows**   
+**from mprows.mprows import mprows**   
 
 Then you can simply program your own function and use mprows as a decorator for multiprocessing. 
 
