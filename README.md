@@ -38,10 +38,10 @@ Then you can simply program your own function and use mprows as a decorator for 
 
 To multiprocess a function:
 <p align="center">
-<img src="./img/func.png">
+<img src="./img/ex_func.png">
 </p>  
 
 To multiprocess a method in a class:
 <p align="center">
-<img src="./img/class.png">
+<img src="./img/ex_class.png">
 </p>
