@@ -33,9 +33,8 @@ class mprows:
     2). since this code will split your data based on row, you must make sure that
         the operation is "row independent". 
     '''
-    def __init__(self, n_proc =1, mode = 'func'):
+    def __init__(self, n_proc =1):
         self.n_proc = n_proc
-        self.mode = mode
     def _multiproc_data_split(self, data):
         # convert data to numpy 
         if type(data) != type(np.zeros(1)):
