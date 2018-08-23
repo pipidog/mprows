@@ -34,7 +34,7 @@ You must first import mprows:
 
 **from mprows.mprows import mprows**   
 
-Then you can simply program your own function and use mprows as a decorator for multiprocessing. 
+Then you can simply program your own function and use mprows as a decorator for multiprocessing.  
 
 To multiprocess a function:
 <p align="center">

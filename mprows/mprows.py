@@ -31,7 +31,7 @@ class mprows:
                 use the decorator on it.  
 
     2). since this code will split your data based on row, you must make sure that
-        the operation is "row independent".
+        the operation is "row independent". 
     '''
     def __init__(self, n_proc =1, mode = 'func'):
         self.n_proc = n_proc
