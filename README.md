@@ -37,11 +37,46 @@ You must first import mprows:
 Then you can simply program your own function and use mprows as a decorator for multiprocessing.  
 
 To multiprocess a function:
-<p align="center">
-<img src="./img/ex_func.png">
-</p>  
+```python
+import numpy as np
+from mprows.mprows import mprows
+data = np.ones((1000,3))
+@mprows(n_proc = 6) # use 6-cores to run your function
+def foo(data, par={'op':'add', 'const':2}):
+    if par['op'] = 'add':
+        data = data+par['const']
+    elif par['op'] == 'mul':
+        data = data*par['const']
+    return data
+data = foo(data, par = {'op':'add', 'const': 5})
+```
+Due to the limitation of pathos, you cannot directly decorate a method in a class, but you can decorate a method in this way:
+```python
+import numpy as np
+from mprows.mprows import mprows
+data = np.ones((1000,3))
+class test:
+    def __init__(self, n_proc):
+        self.n_proc = n_proc 
+    def foo(self, data, par={'op':'add', 'const':2} ):
+        # define a wrapper in your method and decorate it
+        @mprows(n_proc = self.n_proc)
+        def wrapper(data, par):
+            if par['op'] = 'add':
+                data = data+par['const']
+            elif par['op'] == 'mul':
+                data = data*par['const']
+            return data   
+        return wrapper(data, par)
+data = test(n_proc = 6).foo(data, par = {'op':'add', 'const': 5})
 
-To multiprocess a method in a class:
-<p align="center">
-<img src="./img/ex_class.png">
-</p>
+```
+# What are the inputs
+When you design your function, you must define a variable called "data" and put all the other variables as a single dictionary call "par". "data" can be a numpy array, a pandas dataframe or a list. mprows will autometically split the data into **n_proc** pieces and pass these pieces to the function using different process. Therefore, **splitting** the data must be logical espeically when your data is a list. 
+# What will be returned
+When using **mprows**, you need to be catious about what will be returned. 
+* **numpy** or **pandas DataFrame**   
+if the return of your function is a single numpy array or a single Pandas DataFrame, mprows will automatically concatenate the resutls calculated via each process. In this regard, your function will work as usuall but processed using multiprocess. 
+
+* **list**
+In many cases, your returned data are not structured as a simple numpy array or pandas dataframe. In this regard, you can use a list as your return and mprows will return the results by using the "list.extend()" python built-in method to concatenate all results. Therefore, be caution when you use a list as your return.  

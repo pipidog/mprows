@@ -9,7 +9,7 @@ par = {'op':'add', 'const': 5}
 n_proc = 5
 
 # ==================================
-data = np.ones((1000,3))
+data = np.ones((1000,50,3))
 if task == 'class':
     class test:
         def __init__(self, n_proc):
@@ -35,4 +35,4 @@ elif task == 'func':
         return data
     data = foo(data, par)
 
-print(data)
+print(data[0,:,:])
