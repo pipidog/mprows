@@ -48,6 +48,7 @@ def foo(data, par={'op':'add', 'const':2}):
     elif par['op'] == 'mul':
         data = data*par['const']
     return data
+# now running your function will automatically use 6 cores 
 data = foo(data, par = {'op':'add', 'const': 5})
 ```
 Due to the limitation of pathos, you cannot directly decorate a method in a class, but you can decorate a method in this way:
@@ -68,6 +69,7 @@ class test:
                 data = data*par['const']
             return data   
         return wrapper(data, par)
+# now running your function will automatically use 6 cores 
 data = test(n_proc = 6).foo(data, par = {'op':'add', 'const': 5})
 
 ```
